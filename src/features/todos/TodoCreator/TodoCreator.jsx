@@ -14,23 +14,28 @@ export const TodoCreator = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter")
+    const trimmedText = e.target.value.trim();
+    if (e.key === "Enter" && trimmedText) {
       dispatch(
         addTodo({
           id: getNextIdFromArray(todoIds),
-          text: input,
+          text: trimmedText,
           completed: false,
           dateCreated: Date.now(),
         })
       );
+      setInput("");
+    }
   };
 
   return (
     <div className="todo-creator">
       <input
+        autoFocus
         type="text"
         className="todo-creator__input"
         placeholder="Create a new todo..."
+        value={input}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
