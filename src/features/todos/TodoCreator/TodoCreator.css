@@ -1,0 +1,11 @@
+.todo-creator {
+  width: 100%;
+}
+
+.todo-creator__input {
+  width: 100%;
+  border: 1px solid #eaeaea;
+  height: 50px;
+  border-radius: 8px;
+  padding: 0 12px;
+}

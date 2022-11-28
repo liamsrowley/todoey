@@ -1,0 +1,43 @@
+.todo {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: #fafafa;
+  border: 1px solid #eaeaea;
+  align-items: center;
+  padding: 20px 12px;
+  border-radius: 8px;
+  gap: 12px;
+}
+
+.todo__checkbox {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border: 1px solid #aaa;
+  border-radius: 25%;
+  content: '';
+}
+
+.todo__checkbox:hover,
+.todo__checkbox:focus {
+  border: 1px solid #1457ad;
+  cursor: pointer;
+}
+
+.todo__checkbox.todo__checkbox--checked {
+  border: 1px solid #1457ad;
+}
+
+.todo__checkbox > span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 25%;
+  background: #1457ad;
+}

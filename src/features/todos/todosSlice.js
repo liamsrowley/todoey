@@ -1,19 +1,20 @@
-import { createSelector } from "reselect";
-
 const initialState = {
   status: "idle",
+  ids: [1, 2],
   entities: {
     1: {
       id: 1,
       text: "Check out this default todo",
       completed: false,
       color: "blue",
+      dateCreated: Date.now(),
     },
     2: {
       id: 2,
       text: "Check out this default todo with a red background",
       completed: false,
       color: "red",
+      dateCreated: Date.now(),
     },
   },
 };
@@ -58,13 +59,15 @@ export const todosReducer = (state = initialState, action) => {
           ...state.entities,
           [todo.id]: todo,
         },
+        ids: [...state.ids, todo.id],
       };
     }
 
     case TODOS_TODO_TOGGLED: {
       const todoId = action.payload;
       const todos = state.entities;
-      const todo = state.entities[todoId];
+      const todo = { ...state.entities[todoId] };
+
       return {
         ...state,
         entities: {
@@ -114,10 +117,6 @@ export const todosReducer = (state = initialState, action) => {
  */
 export const selectTodos = (state) => state.todos;
 export const selectTodoEntities = (state) => state.todos.entities;
-
-export const selectTodoIds = createSelector(
-  (state) => selectTodoEntities(state),
-  (entities) => Object.values(entities).map((todo) => todo.id)
-);
+export const selectTodoIds = (state) => state.todos.ids;
 
 export const selectTodoById = (state, id) => selectTodoEntities(state)[id];

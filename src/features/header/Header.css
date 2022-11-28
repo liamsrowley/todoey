@@ -1,0 +1,25 @@
+.header {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: #eaeaea;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.logo > * {
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (min-width: 320px){
+
+}
