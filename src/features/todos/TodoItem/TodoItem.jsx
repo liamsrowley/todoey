@@ -11,7 +11,7 @@ export const TodoItem = ({ id }) => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === "Space") onCheckboxChange();
+    if (e.key === "Enter" || e.code === "Space") onCheckboxChange();
   };
 
   return (
