@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { filterColors } from "../../filters/FiltersList";
 import { selectTodoById, toggleTodo } from "../todosSlice";
 import "./TodoItem.css";
 
@@ -15,7 +16,7 @@ export const TodoItem = ({ id }) => {
   };
 
   return (
-    <div className="todo">
+    <div className="todo" style={{ background: filterColors[todo.color] }}>
       <div
         tabIndex="0"
         className={

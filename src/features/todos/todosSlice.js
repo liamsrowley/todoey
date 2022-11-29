@@ -33,7 +33,14 @@ export const TODOS_COMPLETED_REMOVED = "todos/completedRemoved";
 /*
  *   Action Creators
  */
-export const addTodo = (todo) => {
+export const addTodo = (text) => {
+  const todo = {
+    id: Math.floor(Math.random() * 1000 + Date.now()),
+    text,
+    completed: false,
+    color: "blue",
+  };
+
   return { type: TODOS_TODO_ADDED, payload: todo };
 };
 
@@ -123,8 +130,8 @@ export const selectTodoEntities = (state) => state.todos.entities;
 export const selectTodoIds = (state) => state.todos.ids;
 
 export const selectFilteredTodos = createSelector(
-  (state) => selectTodoEntities(state),
-  (state) => selectFilters(state),
+  selectTodoEntities,
+  selectFilters,
   (todos, filters) => {
     const { status } = filters;
 
@@ -140,8 +147,19 @@ export const selectFilteredTodos = createSelector(
   }
 );
 
-export const selectFilteredTodoIds = createSelector(
+export const selectColorFilteredTodos = createSelector(
   selectFilteredTodos,
+  selectFilters,
+  (todos, filters) => {
+    const { colors } = filters;
+    if (colors.length === 0) return todos;
+
+    return todos.filter((todo) => colors.includes(todo.color));
+  }
+);
+
+export const selectFilteredTodoIds = createSelector(
+  selectColorFilteredTodos,
   (todos) => todos.map((todo) => todo.id)
 );
 

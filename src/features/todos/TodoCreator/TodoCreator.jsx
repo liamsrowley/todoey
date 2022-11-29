@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getNextIdFromArray } from "../../../utils/getNextIdFromArray";
 import { addTodo, selectTodoIds } from "../todosSlice";
 import "./TodoCreator.css";
 
@@ -16,14 +15,7 @@ export const TodoCreator = () => {
   const handleKeyDown = (e) => {
     const trimmedText = e.target.value.trim();
     if (e.key === "Enter" && trimmedText) {
-      dispatch(
-        addTodo({
-          id: getNextIdFromArray(todoIds),
-          text: trimmedText,
-          completed: false,
-          dateCreated: Date.now(),
-        })
-      );
+      dispatch(addTodo(trimmedText));
       setInput("");
     }
   };
