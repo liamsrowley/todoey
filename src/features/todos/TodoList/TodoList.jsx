@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { TodoItem } from "../TodoItem/TodoItem";
-import { selectTodoIds } from "../todosSlice";
+import { selectFilteredTodoIds } from "../todosSlice";
 
 import "./TodoList.css";
 
 export const TodoList = () => {
-  const todoIds = useSelector(selectTodoIds);
+  const todoIds = useSelector(selectFilteredTodoIds);
 
   return (
     <div className="todo-list">

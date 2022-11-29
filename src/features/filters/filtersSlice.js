@@ -53,3 +53,8 @@ export const filtersReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+/*
+ *    Selectors
+ */
+export const selectFilters = (state) => state.filters;

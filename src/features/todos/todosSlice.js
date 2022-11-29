@@ -1,3 +1,6 @@
+import { createSelector } from "reselect";
+import { selectFilters } from "../filters/filtersSlice";
+
 const initialState = {
   status: "idle",
   ids: [1, 2],
@@ -118,5 +121,28 @@ export const todosReducer = (state = initialState, action) => {
 export const selectTodos = (state) => state.todos;
 export const selectTodoEntities = (state) => state.todos.entities;
 export const selectTodoIds = (state) => state.todos.ids;
+
+export const selectFilteredTodos = createSelector(
+  (state) => selectTodoEntities(state),
+  (state) => selectFilters(state),
+  (todos, filters) => {
+    const { status } = filters;
+
+    const completedStatus = status === "Completed";
+
+    if (!completedStatus) return Object.values(todos);
+
+    console.log(completedStatus);
+
+    return Object.values(todos).filter(
+      (todo) => todo.completed === completedStatus
+    );
+  }
+);
+
+export const selectFilteredTodoIds = createSelector(
+  selectFilteredTodos,
+  (todos) => todos.map((todo) => todo.id)
+);
 
 export const selectTodoById = (state, id) => selectTodoEntities(state)[id];
