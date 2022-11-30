@@ -1,5 +1,5 @@
-import { Content } from "./features/content/Content";
-import { FiltersList } from "./features/filters/FiltersList";
+import { Content } from "./components/content/Content";
+import { FiltersList } from "./features/filters/FiltersList/FiltersList";
 import { Footer } from "./features/footer/Footer";
 import { Header } from "./features/header/Header";
 import { TodoCreator } from "./features/todos/TodoCreator/TodoCreator";

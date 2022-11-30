@@ -1,4 +1,4 @@
-import { Container } from "../../components/container/Container";
+import { Container } from "../container/Container";
 import "./Content.css";
 
 export const Content = ({ children }) => {

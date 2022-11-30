@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { selectFilters } from "../filters/filtersSlice";
+import { selectFilters } from "../filters/filters.slice";
 
 const initialState = {
   status: "idle",

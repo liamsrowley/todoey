@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { capitalizeWord } from "../../../utils/capitalizeWord";
-import { changeColorFilter } from "../filtersSlice";
+import { changeColorFilter } from "../filters.slice";
 
 export const ColorFilter = ({ name, colorCode }) => {
   const dispatch = useDispatch();

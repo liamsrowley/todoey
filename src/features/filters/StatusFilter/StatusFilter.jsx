@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { changeFilterStatus } from "../filtersSlice";
+import { changeFilterStatus } from "../filters.slice";
 
 export const StatusFilter = ({ name }) => {
   const dispatch = useDispatch();

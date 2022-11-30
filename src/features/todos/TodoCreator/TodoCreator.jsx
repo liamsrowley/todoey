@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, selectTodoIds } from "../todosSlice";
+import { addTodo, selectTodoIds } from "../todos.slice";
 import "./TodoCreator.css";
 
 export const TodoCreator = () => {

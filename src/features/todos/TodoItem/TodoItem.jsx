@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filterColors } from "../../filters/FiltersList";
-import { selectTodoById, toggleTodo } from "../todosSlice";
+import { filterColors } from "../../filters/FiltersList/FiltersList";
+import { selectTodoById, toggleTodo } from "../todos.slice";
 import "./TodoItem.css";
 
 export const TodoItem = ({ id }) => {

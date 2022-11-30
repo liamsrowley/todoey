@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { TodoItem } from "../TodoItem/TodoItem";
-import { selectFilteredTodoIds } from "../todosSlice";
+import { selectFilteredTodoIds } from "../todos.slice";
 
 import "./TodoList.css";
 

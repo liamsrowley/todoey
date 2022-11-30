@@ -1,5 +1,5 @@
-import { ColorFilter } from "./ColorFilter/ColorFilter";
-import { StatusFilter } from "./StatusFilter/StatusFilter";
+import { ColorFilter } from "../ColorFilter/ColorFilter";
+import { StatusFilter } from "../StatusFilter/StatusFilter";
 
 const filterStatuses = ["All", "Completed"];
 export const filterColors = {
