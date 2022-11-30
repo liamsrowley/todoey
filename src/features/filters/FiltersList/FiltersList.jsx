@@ -1,6 +1,8 @@
 import { ColorFilter } from "../ColorFilter/ColorFilter";
 import { StatusFilter } from "../StatusFilter/StatusFilter";
 
+import styles from "./FiltersList.module.css";
+
 const filterStatuses = ["All", "Completed"];
 export const filterColors = {
   red: "#e63535",
@@ -18,10 +20,17 @@ export const FiltersList = () => {
   ));
 
   return (
-    <div>
-      <p>Status</p>
-      {renderedStatuses}
-      {renderedColors}
+    <div className={styles.filters}>
+      <div>
+        <p>Status</p>
+        {renderedStatuses}
+      </div>
+      <div
+        className={`${styles["filters__item"]} ${styles["filters__item--row"]}`}
+      >
+        <p>Colors</p>
+        {renderedColors}
+      </div>
     </div>
   );
 };

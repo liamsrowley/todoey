@@ -1,0 +1,18 @@
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.filters__item.filters__item--row {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters > div > p {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgb(82, 82, 82);
+  letter-spacing: 0.1rem;
+}

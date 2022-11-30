@@ -1,10 +1,10 @@
-import { Content } from "../../components/content/Content";
-import "./Footer.css";
+import { Container } from "../../components/container/Container";
+import styles from "./Footer.module.css";
 
 export const Footer = () => {
   return (
-    <footer className="footer">
-      <Content>Footer Content</Content>
+    <footer className={styles.footer}>
+      <Container>Created by Liam Rowley</Container>
     </footer>
   );
 };

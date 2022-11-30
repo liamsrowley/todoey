@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import { capitalizeWord } from "../../../utils/capitalizeWord";
 import { changeColorFilter } from "../filters.slice";
+
+import styles from "./ColorFilter.module.css";
 
 export const ColorFilter = ({ name, colorCode }) => {
   const dispatch = useDispatch();
@@ -9,8 +10,7 @@ export const ColorFilter = ({ name, colorCode }) => {
     <div
       style={{ background: colorCode }}
       onClick={() => dispatch(changeColorFilter(name))}
-    >
-      <span>{capitalizeWord(name)}</span>
-    </div>
+      className={styles["color-filter"]}
+    />
   );
 };

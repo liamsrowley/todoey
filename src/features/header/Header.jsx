@@ -1,15 +1,13 @@
 import { Container } from "../../components/container/Container";
-import "./Header.css";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <Container>
-        <div className="logo">
-          <h1 className="logo__heading">Todoey</h1>
-          <p className="logo__subheading">
-            A todos app exploring Redux fundamentals
-          </p>
+        <div className={styles.logo}>
+          <h1>Todoey</h1>
+          <p>A todos app exploring Redux fundamentals</p>
         </div>
       </Container>
     </header>

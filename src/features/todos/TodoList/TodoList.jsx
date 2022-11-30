@@ -7,6 +7,8 @@ import "./TodoList.css";
 export const TodoList = () => {
   const todoIds = useSelector(selectFilteredTodoIds);
 
+  if (todoIds.length === 0) return <h2>No todos found!</h2>;
+
   return (
     <div className="todo-list">
       {todoIds.map((id) => (

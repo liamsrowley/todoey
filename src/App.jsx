@@ -1,4 +1,5 @@
-import { Content } from "./components/content/Content";
+import { Card } from "./components/card/Card";
+import { Container } from "./components/container/Container";
 import { FiltersList } from "./features/filters/FiltersList/FiltersList";
 import { Footer } from "./features/footer/Footer";
 import { Header } from "./features/header/Header";
@@ -7,15 +8,17 @@ import { TodoList } from "./features/todos/TodoList/TodoList";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
-      <Content>
-        <TodoCreator />
-        <FiltersList />
-        <TodoList />
-      </Content>
+      <Container>
+        <Card>
+          <TodoCreator />
+          <FiltersList />
+          <TodoList />
+        </Card>
+      </Container>
       <Footer />
-    </div>
+    </>
   );
 }
 
