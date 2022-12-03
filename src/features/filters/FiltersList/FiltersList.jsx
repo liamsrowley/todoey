@@ -1,9 +1,10 @@
+import { Flex } from "../../../components/flex/Flex";
 import { ColorFilter } from "../ColorFilter/ColorFilter";
 import { StatusFilter } from "../StatusFilter/StatusFilter";
 
 import styles from "./FiltersList.module.css";
 
-const filterStatuses = ["All", "Completed"];
+const filterStatuses = ["All", "Completed", "Incompleted"];
 export const filterColors = {
   red: "#e63535",
   green: "#2bbd30",
@@ -20,15 +21,17 @@ export const FiltersList = () => {
   ));
 
   return (
-    <div className={styles.filters}>
+    <Flex direction="row" gap="20px">
       <div className={styles["filters__item"]}>
         <p>Status</p>
         {renderedStatuses}
       </div>
       <div className={styles["filters__item"]}>
         <p>Colors</p>
-        <div className={styles["row"]}>{renderedColors}</div>
+        <Flex direction="row" gap="4px">
+          {renderedColors}
+        </Flex>
       </div>
-    </div>
+    </Flex>
   );
 };

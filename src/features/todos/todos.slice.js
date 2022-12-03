@@ -27,7 +27,7 @@ const initialState = {
  */
 export const TODOS_TODO_ADDED = "todos/todoAdded";
 export const TODOS_TODO_TOGGLED = "todos/todoToggled";
-export const TODOS_ALL_TOGGLED = "todos/allToggled";
+export const TODOS_ALL_COMPLETED = "todos/allToggled";
 export const TODOS_COMPLETED_REMOVED = "todos/completedRemoved";
 
 /*
@@ -48,8 +48,8 @@ export const toggleTodo = (todoId) => {
   return { type: TODOS_TODO_TOGGLED, payload: todoId };
 };
 
-export const toggleAllTodos = () => {
-  return { type: TODOS_ALL_TOGGLED };
+export const completeAllTodos = () => {
+  return { type: TODOS_ALL_COMPLETED };
 };
 
 export const removeCompletedTodos = () => {
@@ -90,12 +90,11 @@ export const todosReducer = (state = initialState, action) => {
       };
     }
 
-    case TODOS_ALL_TOGGLED: {
+    case TODOS_ALL_COMPLETED: {
       const newEntities = { ...state.entities };
 
       Object.values(state.entities).forEach(
-        (todo) =>
-          (newEntities[todo.id] = { ...todo, completed: !todo.completed })
+        (todo) => (newEntities[todo.id] = { ...todo, completed: true })
       );
 
       return {
@@ -136,13 +135,16 @@ export const selectFilteredTodos = createSelector(
     const { status } = filters;
 
     const completedStatus = status === "Completed";
+    const incompletedStatus = status === "Incompleted";
 
-    if (!completedStatus) return Object.values(todos);
+    let comparisonValue;
 
-    console.log(completedStatus);
+    if (incompletedStatus) comparisonValue = false;
+    if (!incompletedStatus) comparisonValue = true;
+    if (!completedStatus && !incompletedStatus) return Object.values(todos);
 
     return Object.values(todos).filter(
-      (todo) => todo.completed === completedStatus
+      (todo) => todo.completed === comparisonValue
     );
   }
 );

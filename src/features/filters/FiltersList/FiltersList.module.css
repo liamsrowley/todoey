@@ -1,25 +1,8 @@
-.filters {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
 .filters__item {
   padding: 0 20px;
-}
-
-.filters__item.filters__item--row {
-  display: flex;
-  flex-direction: row;
 }
 
 .filters > div > p {
   font-size: 0.8rem;
   font-weight: 500;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
 }
