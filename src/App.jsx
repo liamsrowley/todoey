@@ -24,7 +24,13 @@ function App() {
             <FiltersList />
             <TodoActions />
           </Flex>
-          <div style={{ marginTop: "20px" }}>
+          <div
+            style={{
+              marginTop: "20px",
+              paddingTop: "20px",
+              borderTop: "1px solid #eee",
+            }}
+          >
             <TodoList />
           </div>
         </Card>
