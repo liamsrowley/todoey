@@ -1,3 +1,17 @@
 .filter {
   font-weight: 400;
+  color: #555;
+}
+
+.filter.filter--active {
+  color: #222;
+}
+
+.filter > span:hover {
+  cursor: pointer;
+}
+
+.filter.filter--active > span {
+  font-weight: 600;
+  color: #222;
 }

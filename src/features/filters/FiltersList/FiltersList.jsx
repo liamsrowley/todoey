@@ -21,15 +21,13 @@ export const FiltersList = () => {
 
   return (
     <div className={styles.filters}>
-      <div>
+      <div className={styles["filters__item"]}>
         <p>Status</p>
         {renderedStatuses}
       </div>
-      <div
-        className={`${styles["filters__item"]} ${styles["filters__item--row"]}`}
-      >
+      <div className={styles["filters__item"]}>
         <p>Colors</p>
-        {renderedColors}
+        <div className={styles["row"]}>{renderedColors}</div>
       </div>
     </div>
   );

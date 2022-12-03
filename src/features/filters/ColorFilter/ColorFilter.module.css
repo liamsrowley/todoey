@@ -1,11 +1,11 @@
 .color-filter {
   border-radius: 100%;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .color-filter:hover,
 .color-filter.color-filter--active {
   cursor: pointer;
-  border: 3px solid black;
+  border: 2px solid #222;
 }

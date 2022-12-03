@@ -73,4 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - Improve status and colors selector components
 - Improve todo color choices and don't use solid background on colored todos
--
+- Add not found component when no todos exist

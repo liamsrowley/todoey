@@ -14,7 +14,9 @@ function App() {
         <Card>
           <TodoCreator />
           <FiltersList />
-          <TodoList />
+          <div style={{ marginTop: "20px" }}>
+            <TodoList />
+          </div>
         </Card>
       </Container>
       <Footer />
