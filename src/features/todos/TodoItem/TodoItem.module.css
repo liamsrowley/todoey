@@ -6,9 +6,15 @@
   background: #fafafa;
   border: 1px solid #eaeaea;
   align-items: center;
-  padding: 20px 12px;
   border-radius: 8px;
   gap: 12px;
+  height: 70px;
+}
+
+.todo:hover {
+  border: 1px solid #dadada;
+  cursor: pointer;
+  background: #f5f5f5;
 }
 
 .todo__checkbox {
@@ -22,6 +28,13 @@
   border: 1px solid #aaa;
   border-radius: 25%;
   content: '';
+}
+
+.todo__color {
+  width: 8px;
+  height: 100%;
+  display: block;
+  border-radius: 8px 0 0 8px;
 }
 
 .todo__checkbox:hover,

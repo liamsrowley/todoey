@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterColors } from "../../filters/FiltersList/FiltersList";
 import { selectTodoById, toggleTodo } from "../todos.slice";
-import "./TodoItem.css";
+import styles from "./TodoItem.module.css";
 
 export const TodoItem = ({ id }) => {
   const dispatch = useDispatch();
@@ -16,13 +16,17 @@ export const TodoItem = ({ id }) => {
   };
 
   return (
-    <div className="todo" style={{ background: filterColors[todo.color] }}>
+    <div className={styles.todo} onClick={onCheckboxChange}>
+      <div
+        className={styles["todo__color"]}
+        style={{ background: filterColors[todo.color] }}
+      />
       <div
         tabIndex="0"
         className={
           todo.completed
-            ? "todo__checkbox todo__checkbox--checked"
-            : "todo__checkbox"
+            ? `${styles["todo__checkbox"]} ${styles["todo__checkbox--checked"]}`
+            : styles["todo__checkbox"]
         }
         checked={todo.completed}
         onClick={onCheckboxChange}

@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addTodo, selectTodoIds } from "../todos.slice";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../todos.slice";
 import "./TodoCreator.css";
 
 export const TodoCreator = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
-  const todoIds = useSelector(selectTodoIds);
 
   const handleChange = (e) => {
     setInput(e.target.value);
