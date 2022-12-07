@@ -8,6 +8,7 @@ export const TodoItem = ({ id }) => {
   const todo = useSelector((state) => selectTodoById(state, id));
 
   const onCheckboxChange = (e) => {
+    e.stopPropagation();
     dispatch(toggleTodo(id));
   };
 
