@@ -1,4 +1,5 @@
 import { createSelector } from "reselect";
+import { getNextIdFromArray } from "../../utils/getNextIdFromArray";
 import { selectFilters } from "../filters/filters.slice";
 
 const initialState = {
@@ -35,7 +36,6 @@ export const TODOS_COMPLETED_REMOVED = "todos/completedRemoved";
  */
 export const addTodo = (text) => {
   const todo = {
-    id: Math.floor(Math.random() * 1000 + Date.now()),
     text,
     completed: false,
     color: "blue",
@@ -63,6 +63,7 @@ export const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case TODOS_TODO_ADDED: {
       const todo = action.payload;
+      todo.id = getNextIdFromArray(state.ids);
       return {
         ...state,
         entities: {
@@ -105,14 +106,19 @@ export const todosReducer = (state = initialState, action) => {
 
     case TODOS_COMPLETED_REMOVED: {
       const newEntities = { ...state.entities };
+      let newIds = [];
 
       Object.values(state.entities).forEach((todo) => {
-        if (newEntities[todo.id].completed) delete newEntities[todo.id];
+        if (!newEntities[todo.id].completed) return;
+
+        delete newEntities[todo.id];
+        newIds = newIds.filter((id) => id !== todo.id);
       });
 
       return {
         ...state,
         entities: newEntities,
+        ids: newIds,
       };
     }
 

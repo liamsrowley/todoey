@@ -7,13 +7,12 @@
   border: 1px solid #eaeaea;
   align-items: center;
   border-radius: 8px;
-  gap: 12px;
+  gap: 20px;
   height: 70px;
 }
 
 .todo:hover {
   border: 1px solid #dadada;
-  cursor: pointer;
   background: #f5f5f5;
 }
 
@@ -26,7 +25,7 @@
   height: 24px;
   background: white;
   border: 1px solid #aaa;
-  border-radius: 25%;
+  border-radius: 100%;
   content: '';
 }
 
@@ -51,6 +50,6 @@
   display: block;
   width: 16px;
   height: 16px;
-  border-radius: 25%;
+  border-radius: 100%;
   background: #1457ad;
 }

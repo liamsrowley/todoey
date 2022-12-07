@@ -8,7 +8,6 @@ export const TodoItem = ({ id }) => {
   const todo = useSelector((state) => selectTodoById(state, id));
 
   const onCheckboxChange = (e) => {
-    e.stopPropagation();
     dispatch(toggleTodo(id));
   };
 
@@ -17,7 +16,7 @@ export const TodoItem = ({ id }) => {
   };
 
   return (
-    <div className={styles.todo} onClick={onCheckboxChange}>
+    <div className={styles.todo}>
       <div
         className={styles["todo__color"]}
         style={{ background: filterColors[todo.color] }}
