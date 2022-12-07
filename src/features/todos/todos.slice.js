@@ -106,7 +106,7 @@ export const todosReducer = (state = initialState, action) => {
 
     case TODOS_COMPLETED_REMOVED: {
       const newEntities = { ...state.entities };
-      let newIds = [];
+      let newIds = [...state.ids];
 
       Object.values(state.entities).forEach((todo) => {
         if (!newEntities[todo.id].completed) return;

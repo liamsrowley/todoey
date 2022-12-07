@@ -2,11 +2,6 @@
   padding: 0 20px;
 }
 
-.filters__item.filters__item--row {
-  display: flex;
-  flex-direction: row;
-}
-
 .filters__item > p {
   font-size: 0.8rem;
   font-weight: 500;

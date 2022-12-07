@@ -13,6 +13,7 @@ export const Flex = ({
         gap,
         justifyContent,
         alignItems,
+        flexWrap: "wrap",
       }}
     >
       {children}
