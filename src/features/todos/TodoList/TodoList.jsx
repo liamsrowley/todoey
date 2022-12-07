@@ -2,8 +2,7 @@ import { useSelector } from "react-redux";
 import { Flex } from "../../../components/flex/Flex";
 import { TodoItem } from "../TodoItem/TodoItem";
 import { selectFilteredTodoIds } from "../todos.slice";
-
-import "./TodoList.css";
+import styles from "./TodoList.module.css";
 
 export const TodoList = () => {
   const todoIds = useSelector(selectFilteredTodoIds);
@@ -18,7 +17,7 @@ export const TodoList = () => {
     );
 
   return (
-    <div className="todo-list">
+    <div className={styles["todo-list"]}>
       {todoIds.map((id) => (
         <TodoItem key={id} id={id} />
       ))}

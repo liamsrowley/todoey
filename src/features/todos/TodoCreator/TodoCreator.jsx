@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../todos.slice";
-import "./TodoCreator.css";
+import styles from "./TodoCreator.module.css";
 
 export const TodoCreator = () => {
   const dispatch = useDispatch();
@@ -20,11 +20,10 @@ export const TodoCreator = () => {
   };
 
   return (
-    <div className="todo-creator">
+    <div className={styles["todo-creator"]}>
       <input
         autoFocus
         type="text"
-        className="todo-creator__input"
         placeholder="Create a new todo..."
         value={input}
         onChange={handleChange}

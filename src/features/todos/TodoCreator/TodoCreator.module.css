@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.todo-creator__input {
+input {
   width: 100%;
   border: 1px solid #eaeaea;
   height: 50px;
